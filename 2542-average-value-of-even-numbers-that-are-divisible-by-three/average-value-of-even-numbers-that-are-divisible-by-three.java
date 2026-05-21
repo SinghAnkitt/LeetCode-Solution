@@ -9,7 +9,7 @@ class Solution {
             }
         }
         if(count == 0) return 0;
-        int avg = sum/count;
-        return avg;
+        return (sum/count);
+        
     }
 }
