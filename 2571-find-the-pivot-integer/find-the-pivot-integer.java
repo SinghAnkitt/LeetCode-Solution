@@ -1,14 +1,9 @@
 class Solution {
     public int pivotInteger(int n) {
+        int total = n * (n + 1) / 2;
         for(int x = 1; x <= n; x++) {
-            int left = 0;
-            int right = 0;
-            for(int i = 1; i <= x; i++) {
-                left += i;
-            }
-            for(int i = x; i <= n; i++) {
-                right += i;
-            }
+            int left = x * (x + 1) / 2;
+            int right = total - left + x;
             if(left == right) return x;
         }
         return -1;
