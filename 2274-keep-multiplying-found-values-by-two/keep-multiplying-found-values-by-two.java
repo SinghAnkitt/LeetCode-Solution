@@ -3,8 +3,7 @@ class Solution {
         Arrays.sort(nums);
         for(int i = 0; i < nums.length; i++){
             if(nums[i] == original){
-                nums[i] *= 2;
-                original = nums[i];
+                original *= 2;
             }
         }
         return original;
