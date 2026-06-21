@@ -12,8 +12,9 @@ class Solution {
                (rev == Integer.MIN_VALUE / 10 && digit < -8)) {
                 return 0;
             }
-            rev = rev * 10 + digit;
+            rev =  rev * 10 + digit;
         }
+
         return rev;
     }
 }
