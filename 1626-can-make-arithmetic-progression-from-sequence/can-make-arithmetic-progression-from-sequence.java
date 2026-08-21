@@ -1,20 +1,15 @@
 class Solution {
     public boolean canMakeArithmeticProgression(int[] arr) {
         Arrays.sort(arr);
-        int i = 0;
-        int j = 1;
-        boolean check = true;
-        int min = arr[j] - arr[i];
-        while(j < arr.length){
-            int dif = arr[j] - arr[i];
-            if(dif != min){
-                check = false;
-                break;
+
+        int diff = arr[1] - arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - arr[i - 1] != diff) {
+                return false;
             }
-            i++;
-            j++;
         }
-        if(check) return true;
-        else return false;
+
+        return true;
     }
 }
