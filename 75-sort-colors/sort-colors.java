@@ -1,20 +1,18 @@
 class Solution {
-    public void sortColors(int[] nums) {
-        int i = 0, j = 0, k = nums.length-1;
-        while( j <= k){
-            if(nums[j] == 0){
-                int temp = nums[i];
-                nums[i]= nums[j];
-                nums[j] = temp;
-                i++;
-                j++;
-            }else if(nums[j] == 1) j++;
-        else{
-            int temp = nums[j];
-            nums[j] = nums[k];
-            nums[k] = temp;
-            k--;
+    public void sortColors(int[] arr) {
+        int n= arr.length;
+        for(int i = 0; i < n-1; i++){
+            int min = Integer.MAX_VALUE;
+            int mindex = -1;
+            for(int j = i; j < n; j++){
+                if(arr[j] < min){
+                    min = arr[j];
+                    mindex = j;
+                }
             }
+            int temp = arr[i];
+            arr[i] = arr[mindex];
+            arr[mindex] = temp;
         }
     }
 }
